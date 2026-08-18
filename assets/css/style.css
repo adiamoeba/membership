@@ -1,0 +1,112 @@
+/* Palette: deep ink #1B2430, slate paper #E9E6DD, indigo accent #3A5A78,
+   signal amber #C98A2C (dipakai tipis, hanya untuk status "membership").
+   Type: "Source Serif 4" untuk judul (nuansa katalog buku),
+         system sans untuk isi (mudah dibaca di layar/preview). */
+
+:root{
+  --ink:#1B2430;
+  --paper:#F3F1EA;
+  --paper-dim:#E9E6DD;
+  --indigo:#3A5A78;
+  --indigo-dark:#26415B;
+  --amber:#C98A2C;
+  --line:#D8D3C4;
+  --text:#242322;
+  --muted:#6B6759;
+  --danger:#A6402C;
+  --ok:#3E6B4F;
+  --radius:3px;
+}
+
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:var(--paper);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.55;
+}
+h1,h2,h3,.brand{
+  font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  font-weight:600;
+  letter-spacing:.2px;
+}
+
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px;}
+
+.site-header{
+  background:var(--ink);
+  color:var(--paper);
+  border-bottom:3px solid var(--amber);
+}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px;}
+.brand{color:var(--paper);text-decoration:none;font-size:1.25rem;}
+.brand-mark{color:var(--amber);}
+.site-header nav a{color:var(--paper-dim);text-decoration:none;margin-left:22px;font-size:.92rem;}
+.site-header nav a:hover{color:var(--amber);}
+.btn-nav{background:var(--amber);color:var(--ink) !important;padding:7px 14px;border-radius:var(--radius);font-weight:600;}
+
+.page{padding:36px 20px 60px;min-height:60vh;}
+
+.site-footer{border-top:1px solid var(--line);margin-top:40px;padding:20px 0;color:var(--muted);font-size:.85rem;}
+
+.alert{padding:12px 16px;border-radius:var(--radius);margin-bottom:20px;border:1px solid transparent;font-size:.92rem;}
+.alert-error{background:#F6E4DF;border-color:#E2B8A9;color:var(--danger);}
+.alert-success{background:#E4EFE6;border-color:#B9D6BE;color:var(--ok);}
+
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;}
+
+.grid{display:grid;gap:18px;}
+.grid-3{grid-template-columns:repeat(auto-fill,minmax(230px,1fr));}
+.grid-2{grid-template-columns:repeat(auto-fill,minmax(340px,1fr));}
+
+.biblio-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px;display:flex;flex-direction:column;gap:8px;}
+.biblio-card h3{margin:0;font-size:1.05rem;}
+.biblio-card .meta{color:var(--muted);font-size:.85rem;}
+.badge{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.3px;text-transform:uppercase;padding:3px 9px;border-radius:20px;}
+.badge-membership{background:#F1E1C6;color:#7A4E10;}
+.badge-free{background:#E1EAE3;color:var(--ok);}
+.badge-lifetime{background:#E4E9F0;color:var(--indigo-dark);}
+
+a.btn,button.btn{
+  display:inline-block;background:var(--indigo);color:#fff;border:none;
+  padding:10px 18px;border-radius:var(--radius);text-decoration:none;font-size:.92rem;
+  cursor:pointer;font-weight:600;
+}
+a.btn:hover,button.btn:hover{background:var(--indigo-dark);}
+a.btn-outline{background:transparent;color:var(--indigo);border:1px solid var(--indigo);}
+
+form.stacked label{display:block;font-size:.85rem;color:var(--muted);margin:14px 0 5px;}
+form.stacked input[type=text],
+form.stacked input[type=email],
+form.stacked input[type=password],
+form.stacked input[type=tel],
+form.stacked input[type=file],
+form.stacked select,
+form.stacked textarea{
+  width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:var(--radius);
+  font-size:.95rem;background:#fff;color:var(--text);
+}
+form.stacked textarea{min-height:90px;}
+
+table.simple{width:100%;border-collapse:collapse;font-size:.9rem;}
+table.simple th,table.simple td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;}
+table.simple th{color:var(--muted);font-weight:600;font-size:.78rem;text-transform:uppercase;letter-spacing:.3px;}
+
+.status-pill{padding:3px 10px;border-radius:20px;font-size:.75rem;font-weight:700;}
+.status-active{background:#E4EFE6;color:var(--ok);}
+.status-pending{background:#F1E1C6;color:#7A4E10;}
+.status-rejected,.status-expired{background:#F6E4DF;color:var(--danger);}
+
+.preview-pages{display:flex;flex-direction:column;gap:14px;margin:20px 0;}
+.preview-pages img{width:100%;max-width:640px;border:1px solid var(--line);border-radius:var(--radius);}
+.locked-banner{
+  background:var(--ink);color:var(--paper);padding:26px;border-radius:var(--radius);
+  text-align:center;margin-top:10px;
+}
+.locked-banner .amber{color:var(--amber);font-weight:700;}
+
+.plan-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:18px;}
+.plan-card{border:1px solid var(--line);border-radius:var(--radius);padding:22px;background:#fff;text-align:center;}
+.plan-card .price{font-size:1.6rem;font-weight:700;color:var(--indigo-dark);margin:10px 0;}
+.plan-card.lifetime{border-color:var(--amber);}
